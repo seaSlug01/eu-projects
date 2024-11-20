@@ -1,0 +1,58 @@
+.login-link {
+    background: rgb(57, 57, 255);
+    border-radius: 50vw;
+    color: white;
+    transition: transform 0.3s ease-out;
+    display: inline-flex;
+    align-items: center;
+}
+
+.login-link__icon {
+    display: inline-block;
+    transition: all 0.3s ease;
+    width: 0;
+    overflow: hidden;
+    transform: scaleX(0);
+    margin-right: 0;
+}
+
+
+
+.login-link:hover .login-link__icon {
+    width: 1rem;
+    transform: scaleX(1);
+    margin-right: 0.5rem;
+}
+
+.login-link:hover {
+    background: rgb(38 38 168);
+    transform: scale(0.95);
+}
+
+.styled-link {
+    border-radius: 50vw;
+    width: fit-content !important;
+    position: relative;
+    color: rgb(0 137 255);
+    position: relative;
+    transition: all 0.3s ease-out;
+}
+.styled-link:hover {
+    color: rgb(0, 66, 124);
+    letter-spacing: 0.8px;
+}
+
+.styled-link::after {
+    content: "";
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    width: 70%;
+    height: 2px;
+    background: linear-gradient(to right, rgb(0 137 255), #ff7a49);
+    transition: width 0.3s ease;
+}
+
+.styled-link:hover::after {
+    width: 100%;
+}
