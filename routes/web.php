@@ -1,14 +1,14 @@
 <?php
 
 use App\Livewire\Home;
-use App\Livewire\EuPosts;
+use App\Livewire\EuSinglePostPage;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostsController;
 use App\Filament\Resources\UserResource\Pages\Registration;
 
 Route::get('/', Home::class);
 
-Route::get('/eu-posts/{id}', EuPosts::class)->name('eu-posts.show');
+Route::get('/eu-posts/{id}', EuSinglePostPage::class)->name('eu-single-post-page.show');
 
 Route::get('/login', function () {
     return redirect(route('filament.admin.auth.login'));

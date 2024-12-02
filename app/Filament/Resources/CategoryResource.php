@@ -39,7 +39,7 @@ class CategoryResource extends Resource
                     ->schema([
                         TextInput::make('name')->required()->unique(ignorable: fn ($record) => $record),
                     ]),
-                    Step::make('Description')
+                    Step::make('description')
                     ->label("Περιγραφή")
                     ->description('Πρόσθεσε μερικές λεπτομέριες (προαιρετικό)')
                     ->schema([

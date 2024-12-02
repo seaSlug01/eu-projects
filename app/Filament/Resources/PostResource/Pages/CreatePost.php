@@ -20,7 +20,6 @@ class CreatePost extends CreateRecord
             ['name' => 'Uncategorized'], // Find by the 'name' column
             [
                 'description' => 'This category is for uncategorized posts',//description not used cause no such field in db
-                'slug' => Str::slug('Uncategorized'), // Create a slug for the category
             ]
         );
 

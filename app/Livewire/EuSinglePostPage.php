@@ -8,7 +8,7 @@ use Livewire\Component;
 use Illuminate\Support\Facades\Log;
 use Barryvdh\Debugbar\Facades\Debugbar;
 
-class EuPosts extends Component
+class EuSinglePostPage extends Component
 {
     public $postId;
     public $euPost;
@@ -34,7 +34,7 @@ class EuPosts extends Component
 
     public function render()
     {
-        return view('livewire.eu-posts', [
+        return view('livewire.eu-single-post-page', [
             'euPost' => $this->euPost,
         ]);
     }

@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\EuCategory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class EuPost extends Model
 {
@@ -21,9 +22,16 @@ class EuPost extends Model
         'program_managing_entity',
         'description',
         'image',
+        'eu_categories',
     ];
 
     protected $casts = [
         'partners' => 'array',
+        'eu_categories' => 'array',
     ];
+
+    public function euCategories()
+    {
+        return EuCategory::whereIn('id', $this->eu_categories)->get();
+    }
 }

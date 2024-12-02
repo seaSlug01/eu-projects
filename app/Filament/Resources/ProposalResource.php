@@ -241,7 +241,7 @@ class ProposalResource extends Resource
             PriceFilter::make('budget')->label("Προυπολογισμός")->slider()->currency(currency: 'EUR')
             ->min(1000)
             ->max(fn () => Cache::flexible('max_budget', [30, 60], function () {
-                return Proposal::max('budget');
+                return Proposal::max('budget') ?? 0;
             })),
             // SelectFilter::make('submission_date')
             //     ->label('Ημερομηνία Υποβολής')

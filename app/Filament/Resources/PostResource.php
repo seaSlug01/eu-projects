@@ -142,7 +142,7 @@ class PostResource extends Resource
                     ->description('')
                     ->schema([
                         ColorPicker::make('color')->default('#ffffff'),
-                        TextInput::make('slug')->rules('max:15')->unique(ignoreRecord: true),
+                        TextInput::make('slug')->rules('max:30')->unique(ignoreRecord: true),
                         TagsInput::make('tags')->suggestions([
                             'tag-me',
                             'kwstas_tag',
@@ -201,12 +201,12 @@ class PostResource extends Resource
                 ->rules(['max:100']),
                 TextColumn::make('category.name')->label('Category')->sortable()->searchable(),
                 ColorColumn::make('color'),
-                IconColumn::make('finished')
-                ->icon(fn (string $state): string => self::getIconState($state, ['0' => '',
-                    '1' => 'heroicon-o-check-circle',]))
-                ->color('primary')
-                ->sortable()
-                ->label("Finished"),
+                // IconColumn::make('finished')
+                // ->icon(fn (string $state): string => self::getIconState($state, ['0' => '',
+                //     '1' => 'heroicon-o-check-circle',]))
+                // ->color('primary')
+                // ->sortable()
+                // ->label("Finished"),
                 
                 // TextInput::make('attachments')
                 //     ->label('Download Attachments')
@@ -222,7 +222,7 @@ class PostResource extends Resource
                 PriceFilter::make('budget')->label("Προυπολογισμός")->slider()->currency(currency: 'EUR')
                 ->min(1000)
                 ->max(fn () => Cache::flexible('max_budget', [30, 60], function () {
-                    return Post::max('budget');
+                    return Post::max('budget') ?? 0;
                 })),
                 SelectFilter::make('category_id')
                 ->label('Category')

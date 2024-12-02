@@ -11,7 +11,7 @@ class Category extends Model
     use HasFactory;
     protected $fillable = [
         'name',
-        'slug',
+        'description',
     ];
 
     protected static function boot()
@@ -23,7 +23,7 @@ class Category extends Model
             if ($category->posts()->count() > 0) {
                 // Check if the 'Undefined' category exists, and if not, create it
                 $undefinedCategory = Category::firstOrCreate(
-                    ['slug' => 'uncategorized'],   // Search criteria
+                    ['description' => 'Nothing to describe'],   // Search criteria
                     ['name' => 'Uncategorized']    // Attributes to create if not found
                 );
 

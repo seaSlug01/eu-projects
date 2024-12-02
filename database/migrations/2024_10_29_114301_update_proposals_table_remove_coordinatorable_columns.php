@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::table('proposals', function (Blueprint $table) {
             // Remove polymorphic columns
             // $table->dropColumn(['coordinatorable_id', 'coordinatorable_type']);
-            $table->dropForeign('coordinator');
-            $table->dropColumn('coordinator');
+            // $table->dropForeign('coordinator');
+            // $table->dropColumn('coordinator');
 
             // Add foreign key for coordinator
             // $table->foreignId('coordinator')->nullable()->constrained('partners')->onDelete('cascade');

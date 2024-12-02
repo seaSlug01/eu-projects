@@ -39,17 +39,41 @@
         </section>
     
         
-        <section class="projects-wrapper" id="projects">
+        <section class="projects-wrapper" id="projects" wire:init="renderComplete" x-data="{ euPosts: @js($euPosts), euCategories: @js($euCategories) }">
             <div class="content">
                 <div class="sidebar-container">
-                    <ul class="sidebar"></ul>
+                    <ul class="sidebar">
+                        <li class="filterOpt active" data-category="*">Όλα</li>
+                        @foreach ($euCategories as $category)
+                        <li wire:key="euCategory-{{ $category->id }}" data-category="{{$category->id}}" class="filterOpt">{{$category->name}}</li>
+                        @endforeach
+                    </ul>
                 </div>
                 
                 <div class="items-wrapper">
                     <div class="items-header">
                         <h2>Προγράμματα (Όλα)</h2>
                     </div>
-                    <div class="items"></div>
+                    <div class="items" >
+
+                    @foreach ($euPosts as $post)
+                        <a 
+                        wire:key="euPost-{{ $post->id }}" 
+                        class="card" 
+                        href="{{ route('eu-single-post-page.show', $post->id) }}" 
+                        target="_blank"
+                        >
+                            <div class="image">
+                                <img src="{{asset("/images/$post->image") }}" alt="{{ $post->title }}" />
+                            </div>
+                            <div class="title">
+                                <p>{{ $post->title }}</p>
+                            </div>
+                        </a>
+                    @endforeach
+
+                        
+                    </div>
                 </div>
                 
             </div>
