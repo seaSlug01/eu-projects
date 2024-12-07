@@ -1,6 +1,6 @@
 <div class="wrapper">
     
-    <x-navigation />
+    <x-navigation/>
 
     <main>
         <section class="hero" id="hero">

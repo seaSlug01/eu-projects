@@ -2,9 +2,10 @@
 
 namespace App\Livewire;
 
-use App\Models\EuCategory;
 use App\Models\EuPost;
 use Livewire\Component;
+use App\Models\EuCategory;
+use Illuminate\Support\Facades\Route;
 
 class Home extends Component
 {
@@ -36,7 +37,7 @@ class Home extends Component
 
         return view('livewire.home', [
             'euPosts' => $this->data['euPosts'],
-            'euCategories' => $this->data['euCategories']
+            'euCategories' => $this->data['euCategories'],
         ]);
     }
 }

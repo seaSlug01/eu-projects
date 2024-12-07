@@ -3,11 +3,13 @@
     --bg-hover: rgb(226, 226, 226);
 }
 
-*, *::after, *::before {
+*,
+*::after,
+*::before {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: Inter, 'sans-serif';
+    font-family: Inter, "sans-serif";
 }
 
 * a {
@@ -26,8 +28,6 @@ html {
     transform: scale(0.95) !important;
 }
 
-
-
 #hero {
     display: flex;
     justify-content: center;
@@ -44,7 +44,8 @@ html {
     display: flex;
 }
 
-.hero__header, .hero__image {
+.hero__header,
+.hero__image {
     width: 50%;
     display: flex;
     justify-content: center;
@@ -76,7 +77,6 @@ html {
     width: 80%;
     text-align: justify;
 }
-
 
 .hero__header h1 {
     font-size: 4rem;
@@ -142,8 +142,6 @@ html {
     padding-block: 10rem;
 }
 
-
-
 .about-us__content {
     display: flex;
     width: calc(100% - 20rem);
@@ -178,15 +176,10 @@ html {
     font-size: 2rem;
 }
 
-
 .about-us__description p {
-   
-    line-height: 1.6;
+    line-height: 1.8;
     color: var(--txt-color);
-    font-size: 0.95rem;
 }
-
-
 
 .about-us__image {
     flex: 1;
@@ -216,12 +209,11 @@ html {
     background: rgba(0, 0, 0, 0.5);
 }
 
-
 .projects-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-block: 5rem;    
+    padding-block: 5rem;
 }
 
 .content {
@@ -247,7 +239,7 @@ html {
     list-style: none;
     padding: 0.5rem;
     border-right: none;
-    overflow-y: auto;  
+    overflow-y: auto;
 }
 
 .filterOpt {
@@ -265,8 +257,8 @@ html {
     margin-bottom: 0.2rem;
 }
 
-
-.filterOpt:hover, .filterOpt.active {
+.filterOpt:hover,
+.filterOpt.active {
     background: var(--bg-hover);
 }
 
@@ -340,15 +332,13 @@ html {
 
 .card .title p {
     font-size: 0.9rem;
-    display: -webkit-box; 
-    -webkit-box-orient: vertical; 
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
     line-clamp: 3;
     overflow: hidden;
     line-height: 1.4;
 }
-
-
 
 @media only screen and (max-width: 1024px) {
     .hero__container {
@@ -358,7 +348,8 @@ html {
         padding-block: 5rem;
     }
 
-    .hero__header, .hero__image {
+    .hero__header,
+    .hero__image {
         width: 100%;
     }
 
@@ -440,4 +431,3 @@ html {
         flex-wrap: wrap;
     }
 }
-

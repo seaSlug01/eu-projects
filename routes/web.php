@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostsController;
 use App\Filament\Resources\UserResource\Pages\Registration;
 
-Route::get('/', Home::class);
+Route::get('/', Home::class)->name("homepage");
 
 Route::get('/eu-posts/{id}', EuSinglePostPage::class)->name('eu-single-post-page.show');
 

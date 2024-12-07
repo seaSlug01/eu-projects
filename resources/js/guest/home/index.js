@@ -1,8 +1,7 @@
 import navLinks from "./navLinks";
 import projectFilters from "./projectsFilter";
-import "./heroSection";
+import heroSection from "./heroSection";
 
 document.addEventListener("DOMContentLoaded", () => {
-    navLinks.init();
-    projectFilters.init();
+    [navLinks, heroSection, projectFilters].forEach((module) => module.init());
 });
