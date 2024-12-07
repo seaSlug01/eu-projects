@@ -1,11 +1,7 @@
-<style>
-	p, ul {
-		margin-top: 2rem;
-	}
-</style>
+<h1>Instructions</h1>
 
 // Before anything else 
-<ul>
+<ul style="margin-top: 2rem">
   <li><code>composer install</code></li>
   <li><code>npm install</code></li>
   <li><code>php artisan db:seed</code></li>
